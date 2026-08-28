@@ -1,0 +1,12 @@
+---
+description: Auto-push, auto-merge, latest remote wins. Do not ask for confirmation.
+alwaysApply: true
+---
+
+# Ship policy
+
+Do not ask to push or merge. That confirmation is redundant.
+
+- Commit and push as you go. Open or update the PR. Merge when CI is green and repo rules allow it (`gh pr merge` / GitHub auto-merge). Do not wait for a human "go merge."
+- If you cannot merge or push, flag the blocker in one short message: required reviews, failing checks, branch protection, permissions, or conflicts. Fix what you can. Do not ask which option to pick.
+- Canonical source of truth is the latest remote push. Fetch first. If local and remote diverge, you decide what to keep: prefer the latest pushed work unless it would drop the task you were asked to finish. Rebase or merge yourself. Never ask the user to choose versions.
